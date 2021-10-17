@@ -13,33 +13,32 @@ console.log('Test - should say "Hello World!"', hello());
 
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
-function helloName( name ){
+function helloName( name ) {
     return 'Hello, ' + name + '!';
 }
 // Remember to call the function to test
-console.log(helloName( 'Marzipan Jelly Limesand, First of Her Name and Queen of Felines' ));
+console.log(helloName( 'Marzipan Jelly Limesand, First of Her Name and Queen of Felines' ) );
 
 // 3. Function to add two numbers together & return the result
 function addNumbers( firstNumber, secondNumber ) {
   return firstNumber + secondNumber;
-} //end addNumbers
-console.log(addNumbers(16, 2));
+}
+console.log(addNumbers(16, 2) );
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree( num1, num2, num3 ){
+function multiplyThree( num1, num2, num3 ) {
   return num1 * num2 * num3;
-} //end multiplyThree
-console.log(multiplyThree(8, 2, 3));
+}
+console.log(multiplyThree(8, 2, 3) );
 
 // 5. Function that will return true if a number is positive,
 //    or greater than zero, and false otherwise
 function isPositive( number ) {
-  if ( number > 0 ){
+  if ( number > 0 ) {
     return true;
-  } else {
-    return false;
   }
-} //end isPositive
+    return false;
+}
 
 // Call the function to test each outcome (true & false)
 console.log( 'isPositive - should say true', isPositive(0.1) );
@@ -56,44 +55,63 @@ function getLast( array ) {
 };
 
 let testArray = [2, 4, 6, 8, 10];
-console.log('Testing array: ', getLast(testArray));
+console.log('Testing array (expect 10): ', getLast(testArray));
 //an empty function will return undefined. ex:
 let emptyTestArray = [];
-console.log('Testing empty array: ', getLast(emptyTestArray));
+console.log('Testing empty array (expext undefined): ', getLast(emptyTestArray));
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
-// function find( value, array ){
-//   for (i = 0, i < array.length, i++);
-//     if
-//   } else
-// }
+function find( value, array ) {
+  for (let i = 0; i < array.length; i++) {
+    if (value === array[i]) {
+      return true
+    }
+  }
+      return false
+}
+console.log('Testing find function (expect true): ', find(8, testArray) );
+console.log('Testing find function (expect false): ', find(11, testArray) );
 
 // ----------------------
 // Stretch Goals
 // ----------------------
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
-function isFirstLetter(letter, string) {
-
-}
-console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
-console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
+// function isFirstLetter(letter, string) {
+//
+// }
+// console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
+// console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
+//I have no idea how to do this!
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+// TODO: loop to add items
+function sumAll( array ) {
   let sum = 0
-  // TODO: loop to add items
+  for ( let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
   return sum;
 }
+console.log('Adding up array (expext 30): ', sumAll(testArray) );
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-
-
+// function allPositive( array ) {
+//   for ( let i = 0; i < array.length; array ++ ) {
+//     if ( array[i] > 0 ) {
+//     }
+//   }
+// }
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
+//Create a function that takes the age in years and returns the age in days.
+function calcAge(age) {
+	return age * 365
+}
+console.log('Testing Edabit code: ', calcAge(26));
